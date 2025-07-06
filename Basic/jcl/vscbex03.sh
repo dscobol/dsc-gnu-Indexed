@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Compile and run VSCBEX03
 
@@ -10,7 +10,7 @@ PGM=VSCBEX03
 export DD_CUSTIDX="../idata/customer.idat"
 
 # clean up
-rm ../bin/$PGM
+rm -f ../bin/$PGM 2>/dev/null || true
 
 cobc -x ../cbl/$PGM.cbl -I $SYSLIB -o ../bin/$PGM
 
